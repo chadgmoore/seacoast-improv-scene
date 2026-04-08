@@ -22,9 +22,12 @@ MAP = {
 }
 
 events = list(raw) + mist
-def sort_key(e): return (0, e["date"]) if e["date"] else (1, "9999")
-events.sort(key=sort_key)
 today = date.today()
+def sort_key(e):
+    if not e["date"]: return (2, "9999")
+    if e["date"] < str(today): return (1, e["date"])
+    return (0, e["date"])
+events.sort(key=sort_key)
 
 TYPE_META = {
     "Show":      ("#FFD700","#111","Show"),
@@ -56,8 +59,10 @@ def is_past(d_str):
     return False  # Dated events already filtered; ongoing = already started
 
 def is_ongoing_started(e):
-    # Cards with no date and type Class or Workshop are ongoing/already started
-    return e["date"] is None and e["type"] in ("Class", "Workshop")
+    # Gray out classes/workshops with no date OR with a past start date
+    if e["type"] not in ("Class", "Workshop"): return False
+    if e["date"] is None: return True
+    return e["date"] < str(today)
 
 def map_url(loc):
     q = MAP.get(loc, loc)
@@ -202,6 +207,12 @@ h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spaci
 .card-go{{display:flex;align-items:center;padding:0 .9rem;font-size:1rem;color:#ccc;border-left:2px solid #ddd;flex-shrink:0;transition:color .1s}}
 .card:hover .card-go{{color:var(--black);border-left-color:var(--black)}}
 
+/* SUGGESTION BAR */
+.suggest-bar{{max-width:960px;margin:0 auto;padding:1.25rem 2rem;border-top:4px solid var(--black);border-bottom:4px solid var(--black);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:var(--bg)}}
+.suggest-bar p{{font-size:.85rem;color:#444}}
+.suggest-bar p strong{{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:.04em;color:var(--black)}}
+.suggest-link{{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:var(--black);color:#fff;padding:.4rem 1.1rem;text-decoration:none;border:2.5px solid var(--black);transition:background .1s,color .1s;flex-shrink:0}}
+.suggest-link:hover{{background:var(--red);border-color:var(--red)}}
 footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1.2rem 2rem;font-size:.68rem;color:#888;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem}}
 
 .hidden{{display:none!important}}
@@ -254,6 +265,11 @@ footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:
 <main class="listings">
 {cards_html}
 </main>
+
+<div class="suggest-bar">
+  <p><strong>Know something we missed?</strong> Submit an event, report an error, or request a removal.</p>
+  <a class="suggest-link" href="https://tally.so/r/QKJ18p" target="_blank" rel="noopener">Submit / Feedback</a>
+</div>
 
 <footer>
   <span>Updated {last_updated} · Sources: esseximprov.com · stfimprov.com · queencityimprov.com · yesandcoimprov.com · maineimprovstudio.com · meetup.com/seacoast-improv-incubator</span>
