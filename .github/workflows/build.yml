@@ -2,12 +2,13 @@ name: Rebuild Improv Listings
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # runs daily at 6am UTC (2am ET)
-  workflow_dispatch:        # allows manual trigger from GitHub UI
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repo
@@ -33,7 +34,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add index.html events.json
           git diff --staged --quiet || git commit -m "Auto-rebuild $(date -u '+%Y-%m-%d')"
           git push
