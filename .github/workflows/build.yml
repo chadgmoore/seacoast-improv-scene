@@ -39,6 +39,3 @@ jobs:
           git add index.html events.json
           git diff --staged --quiet || git commit -m "Auto-rebuild $(date -u '+%Y-%m-%d')"
           git push
-
-      - name: Trigger Netlify deploy
-        run: curl -X POST ${{ secrets.NETLIFY_BUILD_HOOK }}
