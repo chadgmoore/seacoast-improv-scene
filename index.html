@@ -18,10 +18,16 @@ body{background:var(--bg);color:var(--black);font-family:'DM Sans',sans-serif}
 
 /* HEADER */
 header{border-bottom:4px solid var(--black);position:relative;overflow:hidden;background:var(--bg)}
-.h-inner{max-width:960px;margin:0 auto;padding:3rem 2rem 2.5rem;position:relative;z-index:1}
-.h-deco{display:none}
+.h-inner{max-width:960px;margin:0 auto;padding:2.5rem 2rem 2rem;position:relative;z-index:1}
+.h-deco{position:absolute;top:0;right:0;height:100%;width:200px;display:flex;flex-direction:column;border-left:4px solid var(--black);overflow:hidden}
+.d-r{flex:2;background:var(--red);border-bottom:4px solid var(--black)}
+.d-b{flex:3;background:var(--blue);border-bottom:4px solid var(--black);display:flex}
+.d-b1{flex:1;border-right:4px solid var(--black)}
+.d-b2{flex:2}
+.d-y{flex:1;background:var(--yellow);border-bottom:4px solid var(--black)}
+.d-p{flex:1.5;background:var(--purple)}
 .eyebrow{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#666;margin-bottom:.6rem}
-h1{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spacing:.04em;line-height:.88;color:var(--red)}
+h1{font-family:'Bangers',cursive;font-size:clamp(3rem,9vw,5.5rem);letter-spacing:.04em;line-height:.92;color:var(--red)}
 .h-sub{margin-top:.8rem;font-size:.88rem;color:#555;max-width:500px}
 
 /* FILTER BAR */
@@ -128,7 +134,7 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
   </div>
   <div class="h-inner">
     <div class="eyebrow">Portland ME · Portsmouth NH · Manchester NH · Beverly MA</div>
-    <h1>SEACOAST IMPROV SCENE</h1>
+    <h1>SEACOAST<br>IMPROV<br>SCENE</h1>
     <p class="h-sub">Classes, shows, jams &amp; auditions across the region — all in one place.</p>
   </div>
 </header>
@@ -153,13 +159,46 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 </div>
 
 <main class="listings">
-<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-with-micaela-blei/" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
-  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">SAT</div><div class="cd-mon">APR</div><div class="cd-day">11</div></div><div class="card-lbl">Show</div></div>
+<div class="card" data-href="https://esseximprov.com/class/101" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">TUE</div><div class="cd-mon">JAN</div><div class="cd-day">27</div></div><div class="card-lbl">Class</div></div>
   <div class="card-body">
-    <p class="card-title">Yes&Co. with Micaela Blei</p>
-    <p class="card-org">YES&Co.</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Sat, Apr 11 @ 7pm</p>
+    <p class="card-title">Improv 101</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Tuesdays 7–9pmstarts Jan 27, 2026</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://esseximprov.com/class/201" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">SUN</div><div class="cd-mon">FEB</div><div class="cd-day">8</div></div><div class="card-lbl">Class</div></div>
+  <div class="card-body">
+    <p class="card-title">Improv 201</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Sundays 12–2pmstarts Feb 8, 2026</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://esseximprov.com/class/art-of-the-scene" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">FEB</div><div class="cd-day">18</div></div><div class="card-lbl">Class</div></div>
+  <div class="card-body">
+    <p class="card-title">Art of the Scene</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Wednesdays 7–9pmstarts Feb 18, 2026</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/313859962/?eventOrigin=group_upcoming_events" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
+  <div class="card-left" style="background:#9B2DE8;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">APR</div><div class="cd-day">8</div></div><div class="card-lbl">Incubator</div></div>
+  <div class="card-body">
+    <p class="card-title">Wednesday Night Incubator</p>
+    <p class="card-org">Seacoast Improv Incubator</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=South%20Church%20Unitarian%20Universalist%20292%20State%20St%20Portsmouth%20NH" target="_blank" rel="noopener">South Church UU, Portsmouth, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Wed @ 7pm · $5 suggested</p>
     <div class="badges"><span class="badge-soon">This Week</span></div>
   </div>
   <div class="card-go">→</div>
@@ -170,28 +209,28 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
     <p class="card-title">House Team Auditions</p>
     <p class="card-org">Essex Improv</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Tue, Apr 14, 7–9pm</p>
+    <p class="card-when">Tuesday, April 14, 7–9pmOff Cabot Comedy & Events, Beverly</p>
     <div class="badges"><span class="badge-soon">This Week</span></div>
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/313970506/" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
+<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/313970506/?eventOrigin=group_upcoming_events" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
   <div class="card-left" style="background:#9B2DE8;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">APR</div><div class="cd-day">15</div></div><div class="card-lbl">Incubator</div></div>
   <div class="card-body">
     <p class="card-title">Wednesday Night Incubator</p>
     <p class="card-org">Seacoast Improv Incubator</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=South%20Church%20Unitarian%20Universalist%20292%20State%20St%20Portsmouth%20NH" target="_blank" rel="noopener">South Church UU, Portsmouth, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Wed, Apr 15 @ 7pm · $5 suggested</p>
-    
+    <p class="card-when">Wed @ 7pm · $5 suggested</p>
+    <div class="badges"><span class="badge-soon">This Week</span></div>
   </div>
   <div class="card-go">→</div>
 </div>
 <div class="card" data-href="https://www.queencityimprov.com/events/free-open-session-4-16-26" data-type="Jam" data-org="Queen City Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#00A878;color:#fff"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">APR</div><div class="cd-day">16</div></div><div class="card-lbl">Jam</div></div>
   <div class="card-body">
-    <p class="card-title">Free Open Session</p>
+    <p class="card-title">Free Open Session - 4/16/26</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=First%20Unitarian%20Universalist%20Society%20669%20Union%20St%20Manchester%20NH" target="_blank" rel="noopener">UU Manchester, Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
     <p class="card-when">Thu, Apr 16</p>
     
   </div>
@@ -200,21 +239,21 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 <div class="card" data-href="https://thecabot.org/event/improv-jam-and-jelly/" data-type="Jam" data-org="Essex Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#00A878;color:#fff"><div class="cd"><div class="cd-dow">MON</div><div class="cd-mon">APR</div><div class="cd-day">20</div></div><div class="card-lbl">Jam</div></div>
   <div class="card-body">
-    <p class="card-title">April Jam & Jelly</p>
+    <p class="card-title">April Jam & Jelly</p>
     <p class="card-org">Essex Improv</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Mon, Apr 20, 7–9pm</p>
+    <p class="card-when">Monday, April 20, 7–9pmOff Cabot Comedy & Events, Beverly</p>
     
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/314097601/" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
+<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/314097601/?eventOrigin=group_upcoming_events" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
   <div class="card-left" style="background:#9B2DE8;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">APR</div><div class="cd-day">22</div></div><div class="card-lbl">Incubator</div></div>
   <div class="card-body">
     <p class="card-title">Wednesday Night Incubator</p>
     <p class="card-org">Seacoast Improv Incubator</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=South%20Church%20Unitarian%20Universalist%20292%20State%20St%20Portsmouth%20NH" target="_blank" rel="noopener">South Church UU, Portsmouth, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Wed, Apr 22 @ 7pm · $5 suggested</p>
+    <p class="card-when">Wed @ 7pm · $5 suggested</p>
     
   </div>
   <div class="card-go">→</div>
@@ -225,7 +264,7 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
     <p class="card-title">Off Cabot Improv Night</p>
     <p class="card-org">Essex Improv</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Thu, Apr 23 @ 7pm</p>
+    <p class="card-when">Thursday, April 23 @ 7pmOff Cabot Comedy & Events, Beverly</p>
     
   </div>
   <div class="card-go">→</div>
@@ -235,7 +274,7 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
   <div class="card-body">
     <p class="card-title">Short Form: Get Your Reps</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=First%20Unitarian%20Universalist%20Society%20669%20Union%20St%20Manchester%20NH" target="_blank" rel="noopener">UU Manchester, Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
     <p class="card-when">Thu, Apr 23</p>
     
   </div>
@@ -244,21 +283,10 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 <div class="card" data-href="https://esseximprov.com/workshop/search-your-feelings" data-type="Workshop" data-org="Essex Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#0055BF;color:#fff"><div class="cd"><div class="cd-dow">MON</div><div class="cd-mon">APR</div><div class="cd-day">27</div></div><div class="card-lbl">Workshop</div></div>
   <div class="card-body">
-    <p class="card-title">SEARCH YOUR FEELINGS: Improv for Aspiring Galactic Knights</p>
+    <p class="card-title">SEARCH YOUR FEELINGS:Improv Training for Aspiring Galactic Knights Workshop</p>
     <p class="card-org">Essex Improv</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Mon, Apr 27, 6–8pm</p>
-    
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/qnprjtyjcgbmc/" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
-  <div class="card-left" style="background:#9B2DE8;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">APR</div><div class="cd-day">29</div></div><div class="card-lbl">Incubator</div></div>
-  <div class="card-body">
-    <p class="card-title">Wednesday Night Incubator</p>
-    <p class="card-org">Seacoast Improv Incubator</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=South%20Church%20Unitarian%20Universalist%20292%20State%20St%20Portsmouth%20NH" target="_blank" rel="noopener">South Church UU, Portsmouth, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Wed, Apr 29 @ 7pm · $5 suggested</p>
+    <p class="card-when">Monday, April 27, 6–8pmOff Cabot Comedy & Events, Beverly</p>
     
   </div>
   <div class="card-go">→</div>
@@ -269,7 +297,18 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
     <p class="card-title">Art of the Scene Class Show</p>
     <p class="card-org">Essex Improv</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Wed, Apr 29, 7–9pm</p>
+    <p class="card-when">Wednesday, April 29, 7–9pmOff Cabot Comedy & Events, Beverly</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/qnprjtyjcgbmc/?eventOrigin=group_upcoming_events" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
+  <div class="card-left" style="background:#9B2DE8;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">APR</div><div class="cd-day">29</div></div><div class="card-lbl">Incubator</div></div>
+  <div class="card-body">
+    <p class="card-title">Wednesday Night Incubator</p>
+    <p class="card-org">Seacoast Improv Incubator</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=South%20Church%20Unitarian%20Universalist%20292%20State%20St%20Portsmouth%20NH" target="_blank" rel="noopener">South Church UU, Portsmouth, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Wed @ 7pm · $5 suggested</p>
     
   </div>
   <div class="card-go">→</div>
@@ -279,8 +318,8 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
   <div class="card-body">
     <p class="card-title">QCI Improv Show</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Stark%20Brewing%20Company%20500%20Commercial%20St%20Manchester%20NH" target="_blank" rel="noopener">Stark Brewing Company, Manchester, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Mon, May 4</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Mon, May 04</p>
     
   </div>
   <div class="card-go">→</div>
@@ -288,31 +327,20 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 <div class="card" data-href="https://www.queencityimprov.com/events/get-out-of-your-head-and-live-in-the-moment-with-rick" data-type="Workshop" data-org="Queen City Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#0055BF;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">MAY</div><div class="cd-day">6</div></div><div class="card-lbl">Workshop</div></div>
   <div class="card-body">
-    <p class="card-title">Get Out of Your Head and Live in the Moment</p>
+    <p class="card-title">Get Out of Your Head and Live in the Moment (with Rick)</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=First%20Unitarian%20Universalist%20Society%20669%20Union%20St%20Manchester%20NH" target="_blank" rel="noopener">UU Manchester, Manchester, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Wed, May 6</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Wed, May 06</p>
     
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card" data-href="https://www.yesandcoimprov.com/upcoming-shows" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
-  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">SAT</div><div class="cd-mon">MAY</div><div class="cd-day">9</div></div><div class="card-lbl">Show</div></div>
+<div class="card" data-href="https://www.queencityimprov.com/events/kidprov-grades-4-8-with-michael" data-type="Class" data-org="Queen City Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">MAY</div><div class="cd-day">14</div></div><div class="card-lbl">Class</div></div>
   <div class="card-body">
-    <p class="card-title">Yes&Co. with Emma Come Back</p>
-    <p class="card-org">YES&Co.</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Sat, May 9 @ 7pm</p>
-    
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card" data-href="https://www.queencityimprov.com/events/kidprov-grades-4-8-with-michael" data-type="Workshop" data-org="Queen City Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#0055BF;color:#fff"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">MAY</div><div class="cd-day">14</div></div><div class="card-lbl">Workshop</div></div>
-  <div class="card-body">
-    <p class="card-title">KidProv (Grades 4–8)</p>
+    <p class="card-title">KidProv (Grades 4–8, with Michael)</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=First%20Unitarian%20Universalist%20Society%20669%20Union%20St%20Manchester%20NH" target="_blank" rel="noopener">UU Manchester, Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
     <p class="card-when">Thu, May 14</p>
     
   </div>
@@ -321,43 +349,21 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 <div class="card" data-href="https://www.queencityimprov.com/events/free-open-session-5-21-26" data-type="Jam" data-org="Queen City Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#00A878;color:#fff"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">MAY</div><div class="cd-day">21</div></div><div class="card-lbl">Jam</div></div>
   <div class="card-body">
-    <p class="card-title">Free Open Session</p>
+    <p class="card-title">Free Open Session - 5/21/26</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=First%20Unitarian%20Universalist%20Society%20669%20Union%20St%20Manchester%20NH" target="_blank" rel="noopener">UU Manchester, Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
     <p class="card-when">Thu, May 21</p>
     
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card" data-href="https://www.queencityimprov.com/events/qci-improv-show-145" data-type="Show" data-org="Queen City Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">MON</div><div class="cd-mon">JUN</div><div class="cd-day">1</div></div><div class="card-lbl">Show</div></div>
+<div class="card" data-href="https://www.queencityimprov.com/events/teen-improv-high-school-with-michael" data-type="Class" data-org="Queen City Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">JUN</div><div class="cd-day">4</div></div><div class="card-lbl">Class</div></div>
   <div class="card-body">
-    <p class="card-title">QCI Improv Show</p>
+    <p class="card-title">Teen Improv (High School, with Michael)</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Stark%20Brewing%20Company%20500%20Commercial%20St%20Manchester%20NH" target="_blank" rel="noopener">Stark Brewing Company, Manchester, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Mon, Jun 1</p>
-    
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card" data-href="https://www.queencityimprov.com/events/teen-improv-high-school-with-michael" data-type="Workshop" data-org="Queen City Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#0055BF;color:#fff"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">JUN</div><div class="cd-day">4</div></div><div class="card-lbl">Workshop</div></div>
-  <div class="card-body">
-    <p class="card-title">Teen Improv (High School)</p>
-    <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=First%20Unitarian%20Universalist%20Society%20669%20Union%20St%20Manchester%20NH" target="_blank" rel="noopener">UU Manchester, Manchester, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Thu, Jun 4</p>
-    
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card" data-href="https://www.yesandcoimprov.com/upcoming-shows" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
-  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">SAT</div><div class="cd-mon">JUN</div><div class="cd-day">13</div></div><div class="card-lbl">Show</div></div>
-  <div class="card-body">
-    <p class="card-title">Yes&Co. — TBA</p>
-    <p class="card-org">YES&Co.</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Sat, Jun 13 @ 7pm</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Thu, Jun 04</p>
     
   </div>
   <div class="card-go">→</div>
@@ -365,110 +371,165 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 <div class="card" data-href="https://www.queencityimprov.com/events/free-open-session-6-18-26" data-type="Jam" data-org="Queen City Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#00A878;color:#fff"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">JUN</div><div class="cd-day">18</div></div><div class="card-lbl">Jam</div></div>
   <div class="card-body">
-    <p class="card-title">Free Open Session</p>
+    <p class="card-title">Free Open Session - 6/18/26</p>
     <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=First%20Unitarian%20Universalist%20Society%20669%20Union%20St%20Manchester%20NH" target="_blank" rel="noopener">UU Manchester, Manchester, NH <span class="map-arr">↗</span></a></p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Manchester%20NH" target="_blank" rel="noopener">Manchester, NH <span class="map-arr">↗</span></a></p>
     <p class="card-when">Thu, Jun 18</p>
     
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card" data-href="https://www.queencityimprov.com/events/qci-improv-show-146" data-type="Show" data-org="Queen City Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">MON</div><div class="cd-mon">JUL</div><div class="cd-day">6</div></div><div class="card-lbl">Show</div></div>
+<div class="card" data-href="https://www.etix.com/ticket/p/92426207/art-of-the-scene-class-show-beverly-off-cabot-comedy-and-events" data-type="Show" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">THU</div><div class="cd-mon">DEC</div><div class="cd-day">10</div></div><div class="card-lbl">Show</div></div>
   <div class="card-body">
-    <p class="card-title">QCI Improv Show</p>
-    <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Stark%20Brewing%20Company%20500%20Commercial%20St%20Manchester%20NH" target="_blank" rel="noopener">Stark Brewing Company, Manchester, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Mon, Jul 6</p>
+    <p class="card-title">Art of the Scene Class Show</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Wed, December 10@ 7pmOff Cabot Comedy & Events, Beverly</p>
     
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card" data-href="https://www.queencityimprov.com/events/qci-improv-show-147" data-type="Show" data-org="Queen City Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">MON</div><div class="cd-mon">AUG</div><div class="cd-day">3</div></div><div class="card-lbl">Show</div></div>
+<div class="card" data-href="https://offcabot.org/shows/essex-improv-level-101-class-show/" data-type="Show" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">DEC</div><div class="cd-day">16</div></div><div class="card-lbl">Show</div></div>
   <div class="card-body">
-    <p class="card-title">QCI Improv Show</p>
-    <p class="card-org">Queen City Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Stark%20Brewing%20Company%20500%20Commercial%20St%20Manchester%20NH" target="_blank" rel="noopener">Stark Brewing Company, Manchester, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Mon, Aug 3</p>
+    <p class="card-title">Improv 101 Class Show</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Tues, December 16@ 7pmOff Cabot Comedy & Events, Beverly</p>
     
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card card-started" data-href="https://www.stfimprov.com/service-page/improv-201-dynamic-improv-1" data-type="Class" data-org="Stranger Than Fiction Improv" role="link" tabindex="0">
+<div class="card card-started" data-href="https://esseximprov.com//esseximprov.com" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
   <div class="card-body">
-    <p class="card-title">Improv 201: Dynamic Improv</p>
-    <p class="card-org">Stranger Than Fiction Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portsmouth%20NH" target="_blank" rel="noopener">Portsmouth, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Started Apr 4 — ongoing</p>
-    <div class="badges"><span class="badge-started">In Progress</span></div>
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card card-started" data-href="https://www.stfimprov.com/service-page/the-improvised-musical" data-type="Class" data-org="Stranger Than Fiction Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
-  <div class="card-body">
-    <p class="card-title">The Improvised Musical</p>
-    <p class="card-org">Stranger Than Fiction Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portsmouth%20NH" target="_blank" rel="noopener">Portsmouth, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Started Apr 2 — ongoing</p>
-    <div class="badges"><span class="badge-started">In Progress</span></div>
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card card-started" data-href="https://www.stfimprov.com/service-page/101-intro-to-improv-spring-26" data-type="Class" data-org="Stranger Than Fiction Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
-  <div class="card-body">
-    <p class="card-title">101: Intro to Improv (Spring '26)</p>
-    <p class="card-org">Stranger Than Fiction Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portsmouth%20NH" target="_blank" rel="noopener">Portsmouth, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Started Apr 4 — ongoing</p>
-    <div class="badges"><span class="badge-started">In Progress</span></div>
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card card-started" data-href="https://esseximprov.com/class/101" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
-  <div class="card-body">
-    <p class="card-title">Improv 101</p>
+    <p class="card-title">Winter class session has begun!</p>
     <p class="card-org">Essex Improv</p>
     <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Tuesdays 7–9pm, started Jan 27</p>
+    <p class="card-when"></p>
     <div class="badges"><span class="badge-started">In Progress</span></div>
   </div>
   <div class="card-go">→</div>
 </div>
-<div class="card card-started" data-href="https://esseximprov.com/class/201" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
+<div class="card" data-href="https://esseximprov.com/holiday-party" data-type="Show" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
   <div class="card-body">
-    <p class="card-title">Improv 201</p>
+    <p class="card-title">Essex Improv Holiday Party</p>
     <p class="card-org">Essex Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Sundays 12–2pm, started Feb 8</p>
-    <div class="badges"><span class="badge-started">In Progress</span></div>
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card card-started" data-href="https://esseximprov.com/class/art-of-the-scene" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
-  <div class="card-body">
-    <p class="card-title">Art of the Scene</p>
-    <p class="card-org">Essex Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Wednesdays 7–9pm, started Feb 18</p>
-    <div class="badges"><span class="badge-started">In Progress</span></div>
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
-  <div class="card-left" style="background:#9B2DE8;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Incubator</div></div>
-  <div class="card-body">
-    <p class="card-title">Wednesday Night Incubator</p>
-    <p class="card-org">Seacoast Improv Incubator</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=South%20Church%20Unitarian%20Universalist%20292%20State%20St%20Portsmouth%20NH" target="_blank" rel="noopener">South Church UU, Portsmouth, NH <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Every Wednesday @ 7pm · $5 suggested</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Off%20Cabot%20Comedy%20Events%20286%20Cabot%20St%20Beverly%20MA" target="_blank" rel="noopener">Off Cabot Comedy & Events, Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Mon, December 157–9pmOff Cabot Comedy & Events, Beverly</p>
     
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-with-micaela-blei/" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">Yes&Co.With Micaela Blei</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-with-micaela-blei/" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">Tickets</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-kevin-conners/#venue-portland-media-center" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">About the Show</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-kevin-conners/#venue-portland-media-center" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">Yes&Co. withEmma Come Back</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-kevin-conners/#venue-portland-media-center" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">Coming Soon</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-kevin-conners/#venue-portland-media-center" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">About the Show</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-kevin-conners/#venue-portland-media-center" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">TBA</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://porttix.com/whats-on/yes-and-co-kevin-conners/#venue-portland-media-center" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">Tickets Coming Soon</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card" data-href="https://www.instagram.com/yesandcoimprov/" data-type="Show" data-org="YES&Co." role="link" tabindex="0">
+  <div class="card-left" style="background:#FFD700;color:#111"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Show</div></div>
+  <div class="card-body">
+    <p class="card-title">About the Show</p>
+    <p class="card-org">YES&Co.</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website</p>
+    
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card card-started" data-href="https://www.maineimprovstudio.com" data-type="Class" data-org="Maine Improv Studio" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
+  <div class="card-body">
+    <p class="card-title">sign up for our newsletter</p>
+    <p class="card-org">Maine Improv Studio</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Portland%20Media%20Center%20516%20Congress%20St%20Portland%20ME" target="_blank" rel="noopener">Portland Media Center, Portland, ME <span class="map-arr">↗</span></a></p>
+    <p class="card-when">See website for schedule</p>
+    <div class="badges"><span class="badge-started">In Progress</span></div>
   </div>
   <div class="card-go">→</div>
 </div>
@@ -508,7 +569,7 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 </main>
 
 <footer>
-  <span>Updated April 7, 2026 · Sources: esseximprov.com · stfimprov.com · queencityimprov.com · yesandcoimprov.com · maineimprovstudio.com · meetup.com/seacoast-improv-incubator</span>
+  <span>Updated April 8, 2026 · Sources: esseximprov.com · stfimprov.com · queencityimprov.com · yesandcoimprov.com · maineimprovstudio.com · meetup.com/seacoast-improv-incubator</span>
   <span>Not affiliated with any organization listed.</span>
 </footer>
 
