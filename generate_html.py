@@ -1,7 +1,7 @@
 import json, urllib.parse
 from datetime import date
 
-with open("/home/claude/events.json") as f:
+with open("events.json") as f:
     raw = json.load(f)
 
 mist = [
