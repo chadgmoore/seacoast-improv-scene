@@ -267,7 +267,7 @@ footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:
 </footer>
 
 <script>
-// Card click — open event URL, but not when clicking the map link
+// Card click — open event URL, but not when clicking the map link 
 document.querySelectorAll('.card').forEach(card => {{
   card.addEventListener('click', e => {{
     if (e.target.closest('.map-link')) return;
