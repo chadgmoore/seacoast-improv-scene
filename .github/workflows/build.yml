@@ -27,7 +27,10 @@ jobs:
         run: python scraper.py
 
       - name: Generate HTML
-        run: python generate_html.py
+        run: |
+          sed -i 's|/mnt/user-data/outputs/index.html|index.html|g' generate_html.py
+          sed -i 's|/home/claude/events.json|events.json|g' generate_html.py
+          python generate_html.py
 
       - name: Commit updated files
         run: |
