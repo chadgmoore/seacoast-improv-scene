@@ -116,17 +116,11 @@ html = f"""<!DOCTYPE html>
 body{{background:var(--bg);color:var(--black);font-family:'DM Sans',sans-serif}}
 
 /* HEADER */
-header{{border-bottom:4px solid var(--black);position:relative;overflow:hidden;background:var(--bg)}}
-.h-inner{{max-width:960px;margin:0 auto;padding:2.5rem 2rem 2rem;position:relative;z-index:1}}
-.h-deco{{position:absolute;top:0;right:0;height:100%;width:200px;display:flex;flex-direction:column;border-left:4px solid var(--black);overflow:hidden}}
-.d-r{{flex:2;background:var(--red);border-bottom:4px solid var(--black)}}
-.d-b{{flex:3;background:var(--blue);border-bottom:4px solid var(--black);display:flex}}
-.d-b1{{flex:1;border-right:4px solid var(--black)}}
-.d-b2{{flex:2}}
-.d-y{{flex:1;background:var(--yellow);border-bottom:4px solid var(--black)}}
-.d-p{{flex:1.5;background:var(--purple)}}
+header{{border-bottom:4px solid var(--black);background:var(--bg)}}
+.h-inner{{max-width:960px;margin:0 auto;padding:3rem 2rem 2.5rem}}
+.h-deco{{display:none}}
 .eyebrow{{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#666;margin-bottom:.6rem}}
-h1{{font-family:'Bangers',cursive;font-size:clamp(3rem,9vw,5.5rem);letter-spacing:.04em;line-height:.92;color:var(--red)}}
+h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spacing:.04em;line-height:.88;color:var(--red)}}
 .h-sub{{margin-top:.8rem;font-size:.88rem;color:#555;max-width:500px}}
 
 /* FILTER BAR */
@@ -233,7 +227,7 @@ footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:
   </div>
   <div class="h-inner">
     <div class="eyebrow">Portland ME · Portsmouth NH · Manchester NH · Beverly MA</div>
-    <h1>SEACOAST<br>IMPROV<br>SCENE</h1>
+    <h1>SEACOAST IMPROV SCENE</h1>
     <p class="h-sub">Classes, shows, jams &amp; auditions across the region — all in one place.</p>
   </div>
 </header>
