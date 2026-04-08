@@ -103,6 +103,12 @@ h1{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spacin
 .card-go{display:flex;align-items:center;padding:0 .9rem;font-size:1rem;color:#ccc;border-left:2px solid #ddd;flex-shrink:0;transition:color .1s}
 .card:hover .card-go{color:var(--black);border-left-color:var(--black)}
 
+/* SUGGESTION BAR */
+.suggest-bar{max-width:960px;margin:0 auto;padding:1.25rem 2rem;border-top:4px solid var(--black);border-bottom:4px solid var(--black);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:var(--bg)}
+.suggest-bar p{font-size:.85rem;color:#444}
+.suggest-bar p strong{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:.04em;color:var(--black)}
+.suggest-link{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:var(--black);color:#fff;padding:.4rem 1.1rem;text-decoration:none;border:2.5px solid var(--black);transition:background .1s,color .1s;flex-shrink:0}
+.suggest-link:hover{background:var(--red);border-color:var(--red)}
 footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1.2rem 2rem;font-size:.68rem;color:#888;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem}
 
 .hidden{display:none!important}
@@ -153,39 +159,6 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
 </div>
 
 <main class="listings">
-<div class="card" data-href="https://esseximprov.com/class/101" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">TUE</div><div class="cd-mon">JAN</div><div class="cd-day">27</div></div><div class="card-lbl">Class</div></div>
-  <div class="card-body">
-    <p class="card-title">Improv 101</p>
-    <p class="card-org">Essex Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Tuesdays 7–9pmstarts Jan 27, 2026</p>
-    
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card" data-href="https://esseximprov.com/class/201" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">SUN</div><div class="cd-mon">FEB</div><div class="cd-day">8</div></div><div class="card-lbl">Class</div></div>
-  <div class="card-body">
-    <p class="card-title">Improv 201</p>
-    <p class="card-org">Essex Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Sundays 12–2pmstarts Feb 8, 2026</p>
-    
-  </div>
-  <div class="card-go">→</div>
-</div>
-<div class="card" data-href="https://esseximprov.com/class/art-of-the-scene" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
-  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">FEB</div><div class="cd-day">18</div></div><div class="card-lbl">Class</div></div>
-  <div class="card-body">
-    <p class="card-title">Art of the Scene</p>
-    <p class="card-org">Essex Improv</p>
-    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
-    <p class="card-when">Wednesdays 7–9pmstarts Feb 18, 2026</p>
-    
-  </div>
-  <div class="card-go">→</div>
-</div>
 <div class="card" data-href="https://www.meetup.com/seacoast-improv-incubator/events/313859962/?eventOrigin=group_upcoming_events" data-type="Incubator" data-org="Seacoast Improv Incubator" role="link" tabindex="0">
   <div class="card-left" style="background:#9B2DE8;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">APR</div><div class="cd-day">8</div></div><div class="card-lbl">Incubator</div></div>
   <div class="card-body">
@@ -395,6 +368,39 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
   </div>
   <div class="card-go">→</div>
 </div>
+<div class="card card-started" data-href="https://esseximprov.com/class/101" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">TUE</div><div class="cd-mon">JAN</div><div class="cd-day">27</div></div><div class="card-lbl">Class</div></div>
+  <div class="card-body">
+    <p class="card-title">Improv 101</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Tuesdays 7–9pmstarts Jan 27, 2026</p>
+    <div class="badges"><span class="badge-started">In Progress</span></div>
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card card-started" data-href="https://esseximprov.com/class/201" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">SUN</div><div class="cd-mon">FEB</div><div class="cd-day">8</div></div><div class="card-lbl">Class</div></div>
+  <div class="card-body">
+    <p class="card-title">Improv 201</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Sundays 12–2pmstarts Feb 8, 2026</p>
+    <div class="badges"><span class="badge-started">In Progress</span></div>
+  </div>
+  <div class="card-go">→</div>
+</div>
+<div class="card card-started" data-href="https://esseximprov.com/class/art-of-the-scene" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
+  <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd"><div class="cd-dow">WED</div><div class="cd-mon">FEB</div><div class="cd-day">18</div></div><div class="card-lbl">Class</div></div>
+  <div class="card-body">
+    <p class="card-title">Art of the Scene</p>
+    <p class="card-org">Essex Improv</p>
+    <p class="card-loc"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beverly%20MA" target="_blank" rel="noopener">Beverly, MA <span class="map-arr">↗</span></a></p>
+    <p class="card-when">Wednesdays 7–9pmstarts Feb 18, 2026</p>
+    <div class="badges"><span class="badge-started">In Progress</span></div>
+  </div>
+  <div class="card-go">→</div>
+</div>
 <div class="card card-started" data-href="https://esseximprov.com//esseximprov.com" data-type="Class" data-org="Essex Improv" role="link" tabindex="0">
   <div class="card-left" style="background:#FF6B00;color:#fff"><div class="cd ongoing"><span>ON<br>GOING</span></div><div class="card-lbl">Class</div></div>
   <div class="card-body">
@@ -561,6 +567,11 @@ footer{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1
   <div class="card-go">→</div>
 </div>
 </main>
+
+<div class="suggest-bar">
+  <p><strong>Know something we missed?</strong> Submit an event, report an error, or request a removal.</p>
+  <a class="suggest-link" href="https://tally.so/r/QKJ18p" target="_blank" rel="noopener">Submit / Feedback</a>
+</div>
 
 <footer>
   <span>Updated April 8, 2026 · Sources: esseximprov.com · stfimprov.com · queencityimprov.com · yesandcoimprov.com · maineimprovstudio.com · meetup.com/seacoast-improv-incubator</span>
