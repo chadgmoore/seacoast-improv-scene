@@ -1,3 +1,1 @@
-# seacoast-improv-scene
-
-Hello.
+# Seacoast Improv Scene
