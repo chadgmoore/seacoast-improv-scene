@@ -299,6 +299,6 @@ btns.forEach(btn => {{
 </body>
 </html>"""
 
-with open("/mnt/user-data/outputs/index.html","w") as f:
+with open("index.html","w") as f:
     f.write(html)
 print(f"Done. {len(events)} events.")
