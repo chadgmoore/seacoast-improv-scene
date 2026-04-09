@@ -201,7 +201,13 @@ h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spaci
 .suggest-bar p strong{{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:.04em;color:var(--black)}}
 .suggest-link{{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:var(--black);color:#fff;padding:.4rem 1.1rem;text-decoration:none;border:2.5px solid var(--black);transition:background .1s,color .1s;flex-shrink:0}}
 .suggest-link:hover{{background:var(--red);border-color:var(--red)}}
-footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1.2rem 2rem;font-size:.68rem;color:#888;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem}}
+footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1.2rem 2rem;font-size:.68rem;color:#888;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}}
+.footer-left{{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center}}
+.footer-site{{font-family:'Bangers',cursive;font-size:.9rem;letter-spacing:.04em;color:var(--black)}}
+footer a{{color:#888;text-decoration:none}}
+footer a:hover{{color:var(--black)}}
+.kofi-link{{font-size:.72rem;color:#888;text-decoration:none;white-space:nowrap}}
+.kofi-link:hover{{color:#fcbf47}}
 .hidden{{display:none!important}}
 @media(max-width:640px){{
   .h-inner,.filter-bar,.listings,footer,.suggest-bar{{padding-left:1rem;padding-right:1rem}}
@@ -241,13 +247,33 @@ footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:
 {cards_html}
 </main>
 <div class="suggest-bar">
-  <p><strong>Know something we missed?</strong> Submit an event, report an error, or request a removal.</p>
-  <a class="suggest-link" href="https://tally.so/r/QKJ18p" target="_blank" rel="noopener">Submit / Feedback</a>
+  <div class="suggest-text">
+    <p class="suggest-heading">Got an event to add?</p>
+    <p class="suggest-sub">This site is community-maintained. Submit a new listing, update an existing one, or report an error.</p>
+  </div>
+  <a class="suggest-link" href="https://tally.so/r/QKJ18p" target="_blank" rel="noopener">Submit or Update a Listing →</a>
 </div>
 <footer>
-  <span>Updated {last_updated} · seacoastimprov.lol</span>
-  <span>Not affiliated with any organization listed.</span>
+  <div class="footer-left">
+    <span class="footer-site">seacoastimprov.lol</span>
+    <span>Updated {last_updated}</span>
+    <span>Built by <a href="https://chadmoore.net" target="_blank" rel="noopener">Chad Moore</a> with ❤️ &amp; 🤓 on the seacoast of New Hampshire</span>
+    <span>Not affiliated with any organization listed.</span>
+  </div>
+  <div class="footer-right">
+    <a class="kofi-link" href="https://ko-fi.com/cgmoore" target="_blank" rel="noopener">☕ Support this site</a>
+  </div>
 </footer>
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('cgmoore', {{
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Tip Me',
+    'floating-chat.donateButton.background-color': '#323842',
+    'floating-chat.donateButton.text-color': '#fff'
+  }});
+</script>
 <script>
 document.querySelectorAll('.card').forEach(card => {{
   card.addEventListener('click', e => {{
