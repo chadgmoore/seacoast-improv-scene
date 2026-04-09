@@ -32,7 +32,7 @@ def fetch_airtable():
                 "date":     f.get("Date") or None,
                 "date_str": f.get("Date String", ""),
                 "location": f.get("Location", ""),
-                "url":      f.get("URL", ""),
+                "url":      f.get("Event link", ""),
             })
         offset = data.get("offset")
         if not offset:
