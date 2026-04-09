@@ -27,15 +27,6 @@
     "url": "https://esseximprov.com/class/art-of-the-scene"
   },
   {
-    "title": "Wednesday Night Incubator",
-    "date": "2026-04-08",
-    "date_str": "Wed @ 7pm \u00b7 $5 suggested",
-    "type": "Jam",
-    "org": "Seacoast Improv Incubator",
-    "location": "South Church UU, Portsmouth, NH",
-    "url": "https://www.meetup.com/seacoast-improv-incubator/events/313859962/?eventOrigin=group_upcoming_events"
-  },
-  {
     "title": "House Team Auditions",
     "date": "2026-04-14",
     "date_str": "Tuesday, April 14, 7\u20139pmOff Cabot Comedy & Events, Beverly",
@@ -142,6 +133,15 @@
     "org": "Queen City Improv",
     "location": "Manchester, NH",
     "url": "https://www.queencityimprov.com/events/get-out-of-your-head-and-live-in-the-moment-with-rick"
+  },
+  {
+    "title": "Wednesday Night Incubator",
+    "date": "2026-05-06",
+    "date_str": "Wed @ 7pm \u00b7 $5 suggested",
+    "type": "Jam",
+    "org": "Seacoast Improv Incubator",
+    "location": "South Church UU, Portsmouth, NH",
+    "url": "https://www.meetup.com/seacoast-improv-incubator/events/qnprjtyjchbjb/?eventOrigin=group_upcoming_events"
   },
   {
     "title": "KidProv (Grades 4\u20138, with Michael)",
