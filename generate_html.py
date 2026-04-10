@@ -232,7 +232,7 @@ footer{{border-top:2px solid var(--black);max-width:960px;margin:0 auto;padding:
 footer a{{color:#555;text-decoration:underline;text-underline-offset:2px}}
 footer a:hover{{color:var(--black)}}
 .hidden{{display:none!important}}
-.kofi-bar{{max-width:960px;margin:0 auto;padding:.5rem 2rem}}
+.kofi-bar{{max-width:960px;margin:0 auto;padding:.5rem 2rem;min-height:40px}}
 @media(max-width:640px){{
   .h-inner,.filter-bar,.listings,footer,.suggest-bar{{padding-left:1rem;padding-right:1rem}}
   h1{{font-size:3.5rem}}
