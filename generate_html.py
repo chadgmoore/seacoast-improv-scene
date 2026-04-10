@@ -232,10 +232,7 @@ footer{{border-top:2px solid var(--black);max-width:960px;margin:0 auto;padding:
 footer a{{color:#555;text-decoration:underline;text-underline-offset:2px}}
 footer a:hover{{color:var(--black)}}
 .hidden{{display:none!important}}
-.kofi-bar{{max-width:960px;margin:0 auto;padding:.6rem 2rem;display:flex;justify-content:flex-start}}
-.kofi-btn{{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;color:#555;text-decoration:underline;text-underline-offset:2px;}}
-.kofi-btn:hover{{color:var(--black)}}
-.kofi-cup{{width:18px;height:auto;opacity:.6}}
+.kofi-bar{{max-width:960px;margin:0 auto;padding:.5rem 2rem}}
 @media(max-width:640px){{
   .h-inner,.filter-bar,.listings,footer,.suggest-bar{{padding-left:1rem;padding-right:1rem}}
   h1{{font-size:3.5rem}}
