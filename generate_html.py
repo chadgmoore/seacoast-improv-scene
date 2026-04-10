@@ -253,9 +253,26 @@ footer a:hover{{color:var(--black)}}
 <div class="suggest-bar">
   <div class="suggest-text">
     <p class="suggest-heading">Got an event to add?</p>
-    <p class="suggest-sub">This site is community-maintained. Submit a new listing, update an existing one, or report an error.</p>
+    <p class="suggest-sub">This site is community-maintained. Submit a new listing, update an existing one, or report an error. <button class="how-link" onclick="document.getElementById('how-modal').classList.add('modal-open')">How does this work?</button></p>
   </div>
   <a class="suggest-link" href="https://tally.so/r/QKJ18p" target="_blank" rel="noopener">Submit or Update a Listing →</a>
+</div>
+
+<!-- HOW IT WORKS MODAL -->
+<div class="modal-overlay" id="how-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('how-modal').classList.remove('modal-open')" aria-label="Close">✕</button>
+    <h2 class="modal-title">How does this work?</h2>
+    <p class="modal-body">Seacoast Improv Scene is a community-maintained calendar of improv shows, jams, classes, workshops, auditions, and more across the New England seacoast region from Portland ME to Beverly MA.</p>
+    <p class="modal-body">Anyone can submit a listing using the form on this page. Here's how:</p>
+    <ol class="modal-list">
+      <li>Click <strong>Submit or Update a Listing</strong></li>
+      <li>Fill in the details — event name, org, type, date, time, location, and a link</li>
+      <li>Hit Submit</li>
+    </ol>
+    <p class="modal-body">We review every submission before it goes live — usually within 24 hours. You can also use the form to update an existing listing, report an error, or request a removal.</p>
+    <a class="modal-btn" href="https://tally.so/r/QKJ18p" target="_blank" rel="noopener">Submit or Update a Listing →</a>
+  </div>
 </div>
 <footer>
   <div class="footer-left">
@@ -294,6 +311,15 @@ btns.forEach(btn => {{
       card.classList.toggle('hidden', !show);
     }});
   }});
+}});
+
+// Close modal on Escape or overlay click
+document.addEventListener('keydown', e => {{
+  if (e.key === 'Escape') document.getElementById('how-modal').classList.remove('modal-open');
+}});
+document.getElementById('how-modal').addEventListener('click', e => {{
+  if (e.target === document.getElementById('how-modal'))
+    document.getElementById('how-modal').classList.remove('modal-open');
 }});
 </script>
 </body>
