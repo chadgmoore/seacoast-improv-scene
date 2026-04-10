@@ -231,8 +231,6 @@ footer{{border-top:2px solid var(--black);max-width:960px;margin:0 auto;padding:
 .footer-site{{font-family:'Bangers',cursive;font-size:.9rem;letter-spacing:.04em;color:var(--black)}}
 footer a{{color:#555;text-decoration:underline;text-underline-offset:2px}}
 footer a:hover{{color:var(--black)}}
-.kofi-link{{font-size:.72rem;color:#555;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}}
-.kofi-link:hover{{color:var(--black)}}
 .hidden{{display:none!important}}
 @media(max-width:640px){{
   .h-inner,.filter-bar,.listings,footer,.suggest-bar{{padding-left:1rem;padding-right:1rem}}
@@ -298,10 +296,17 @@ footer a:hover{{color:var(--black)}}
     <span>Built by <a href="https://chadmoore.net" target="_blank" rel="noopener">Chad Moore</a> with ❤️ &amp; 🤓 on the seacoast of New Hampshire</span>
     <span>Not affiliated with any organization listed.</span>
   </div>
-  <div class="footer-right">
-    <a class="kofi-link" href="https://ko-fi.com/cgmoore" target="_blank" rel="noopener">☕ Support this site</a>
-  </div>
 </footer>
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('cgmoore', {{
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support this site',
+    'floating-chat.donateButton.background-color': '#323842',
+    'floating-chat.donateButton.text-color': '#ffffff'
+  }});
+</script>
 
 
 <script>
