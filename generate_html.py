@@ -229,9 +229,9 @@ footer a:hover{{color:var(--black)}}
 <body>
 <header>
   <div class="h-inner">
-    <div class="eyebrow">Portland ME · Portsmouth NH · Manchester NH · Beverly MA</div>
+    <div class="eyebrow">Portland ME through Portsmouth NH, Manchester NH, and south to Beverly MA</div>
     <h1>SEACOAST IMPROV SCENE</h1>
-    <p class="h-sub">Classes, shows, jams &amp; auditions across the region — all in one place.</p>
+    <p class="h-sub">Classes, shows, jams &amp; auditions from Portland ME through Portsmouth NH, Manchester NH, and south to Beverly MA.</p>
   </div>
 </header>
 <div class="filter-bar">
