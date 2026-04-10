@@ -232,10 +232,7 @@ footer{{border-top:2px solid var(--black);max-width:960px;margin:0 auto;padding:
 footer a{{color:#555;text-decoration:underline;text-underline-offset:2px}}
 footer a:hover{{color:var(--black)}}
 .hidden{{display:none!important}}
-.kofi-bar{{max-width:960px;margin:0 auto;padding:.4rem 2rem}}
-.kofi-btn{{display:inline-flex;align-items:center;gap:.4rem;font-family:'DM Sans',sans-serif;font-size:.75rem;color:#555;text-decoration:underline;text-underline-offset:2px}}
-.kofi-btn:hover{{color:var(--black)}}
-.kofi-cup{{width:16px;height:auto;opacity:.55}}
+
 @media(max-width:640px){{
   .h-inner,.filter-bar,.listings,footer,.suggest-bar{{padding-left:1rem;padding-right:1rem}}
   h1{{font-size:3.5rem}}
@@ -301,11 +298,6 @@ footer a:hover{{color:var(--black)}}
     <span>Not affiliated with any organization listed.</span>
   </div>
 </footer>
-<div class="kofi-bar">
-  <a href="https://ko-fi.com/cgmoore" target="_blank" rel="noopener" class="kofi-btn">
-    <img src="https://storage.ko-fi.com/cdn/cup-border.png" alt="" class="kofi-cup">Support this site on Ko-fi
-  </a>
-</div>
 
 
 
@@ -344,6 +336,15 @@ document.getElementById('how-modal').addEventListener('click', e => {{
   if (e.target === document.getElementById('how-modal'))
     document.getElementById('how-modal').classList.remove('modal-open');
 }});
+</script>
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('cgmoore', {{
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support this site',
+    'floating-chat.donateButton.background-color': '#323842',
+    'floating-chat.donateButton.text-color': '#ffffff'
+  }});
 </script>
 </body>
 </html>"""
