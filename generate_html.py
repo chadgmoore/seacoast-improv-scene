@@ -46,9 +46,10 @@ print(f"Fetched {len(events)} published events from Airtable")
 today = date.today()
 
 def sort_key(e):
-    if not e["date"]: return (2, "9999")
-    if e["date"] < str(today): return (1, e["date"])
-    return (0, e["date"])
+    if e["type"] == "Incubator": return (0, "0000")
+    if not e["date"]: return (3, "9999")
+    if e["date"] < str(today): return (2, e["date"])
+    return (1, e["date"])
 
 events.sort(key=sort_key)
 
@@ -60,6 +61,8 @@ TYPE_META = {
     "Class":     ("#FF6B00","#fff","Class"),
     "Audition":  ("#E8001C","#fff","Audition"),
     "Incubator": ("#9B2DE8","#fff","Incubator"),
+    "Festival":  ("#FF1493","#fff","Festival"),
+    "Other":     ("#888888","#fff","Other"),
 }
 
 MAP = {
@@ -115,15 +118,17 @@ def card(e):
     started_cls  = " card-started" if started else ""
 
     return f'''<div class="card{started_cls}" data-href="{e["url"]}" data-type="{e["type"]}" data-org="{e["org"]}" role="link" tabindex="0">
-  <div class="card-left" style="background:{bg};color:{fg}">{date_html}<div class="card-lbl">{label}</div></div>
-  <div class="card-body">
+  <div class="card-top" style="background:{bg};color:{fg}">
+    <div class="card-type-row"><span class="card-lbl">{label}</span>{soon_badge}</div>
     <p class="card-title">{e["title"]}</p>
-    <p class="card-org">{e["org"]}</p>
+    <p class="card-org-name">{e["org"]}</p>
+  </div>
+  <div class="card-bottom">
+    {date_html}
     <p class="card-loc"><a class="map-link" href="{murl}" target="_blank" rel="noopener">{e["location"]} <span class="map-arr">↗</span></a></p>
     <p class="card-when">{e["date_str"]}</p>
-    {soon_badge}{started_note}
+    {started_note}
   </div>
-  <div class="card-go">→</div>
 </div>'''
 
 cards_html   = "\n".join(card(e) for e in events)
@@ -152,7 +157,7 @@ header{{border-bottom:4px solid var(--black);background:var(--bg)}}
 .eyebrow{{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#666;margin-bottom:.6rem}}
 h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spacing:.04em;line-height:.88;color:var(--red)}}
 .h-sub{{margin-top:.8rem;font-size:.88rem;color:#555;max-width:500px}}
-.filter-bar{{max-width:960px;margin:0 auto;padding:.85rem 2rem;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center;border-bottom:3px solid var(--black)}}
+.filter-bar{{max-width:960px;margin:0 auto;padding:.85rem 2rem;display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}}
 .f-label{{font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:.06em;margin-right:.2rem;flex-shrink:0}}
 .f-div{{width:1px;height:18px;background:var(--black);margin:0 .15rem;opacity:.2;flex-shrink:0}}
 .fbtn{{background:var(--bg);border:2.5px solid var(--black);color:var(--black);padding:.26rem .72rem;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;cursor:pointer;text-transform:uppercase;letter-spacing:.06em;transition:background .1s,color .1s}}
@@ -164,38 +169,42 @@ h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spaci
 .fbtn[data-filter="Class"]{{border-left:5px solid var(--orange)}}
 .fbtn[data-filter="Audition"]{{border-left:5px solid var(--red)}}
 .fbtn[data-filter="Incubator"]{{border-left:5px solid var(--purple)}}
+.fbtn[data-filter="Festival"]{{border-left:5px solid #FF1493}}
+.fbtn[data-filter="Other"]{{border-left:5px solid #888}}
 .fbtn.active[data-filter="Show"]{{background:var(--yellow);color:#111;border-left-color:var(--black)}}
 .fbtn.active[data-filter="Jam"]{{background:var(--green);color:#fff;border-left-color:var(--black)}}
 .fbtn.active[data-filter="Workshop"]{{background:var(--blue);color:#fff;border-left-color:var(--black)}}
 .fbtn.active[data-filter="Class"]{{background:var(--orange);color:#fff;border-left-color:var(--black)}}
 .fbtn.active[data-filter="Audition"]{{background:var(--red);color:#fff;border-left-color:var(--black)}}
 .fbtn.active[data-filter="Incubator"]{{background:var(--purple);color:#fff;border-left-color:var(--black)}}
-.listings{{max-width:960px;margin:0 auto;padding:1.5rem 2rem 2rem;display:flex;flex-direction:column}}
-.card{{display:flex;align-items:stretch;border:3px solid var(--black);margin-bottom:-3px;cursor:pointer;color:var(--black);background:var(--bg);position:relative;z-index:0;transition:transform .08s}}
+.fbtn.active[data-filter="Festival"]{{background:#FF1493;color:#fff;border-left-color:var(--black)}}
+.fbtn.active[data-filter="Other"]{{background:#888;color:#fff;border-left-color:var(--black)}}
+
+.listings{{max-width:960px;margin:0 auto;padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0}}
+.card{{display:flex;flex-direction:column;border:3px solid var(--black);margin:-1.5px;cursor:pointer;color:var(--black);background:var(--bg);position:relative;z-index:0;transition:transform .08s;min-height:180px}}
 .card:hover{{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--black);z-index:10}}
 .card:focus-visible{{outline:3px solid var(--blue);outline-offset:2px}}
 .card-started{{opacity:.5;filter:saturate(.35)}}
 .card-started:hover{{opacity:.7;filter:saturate(.5)}}
-.card-left{{width:72px;min-width:72px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.6rem .3rem;border-right:3px solid var(--black);gap:.05rem}}
-.cd{{text-align:center;font-family:'Bangers',cursive;line-height:1}}
-.cd-dow{{font-size:.6rem;letter-spacing:.12em;opacity:.8;margin-bottom:.1rem}}
-.cd-mon{{font-size:.75rem;letter-spacing:.08em}}
-.cd-day{{font-size:1.85rem;line-height:1}}
-.cd.ongoing span{{font-family:'DM Sans',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.3;opacity:.75}}
-.card-lbl{{font-size:.44rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-top:.25rem;font-family:'DM Sans',sans-serif}}
-.card-body{{flex:1;min-width:0;padding:.7rem 1rem;display:flex;flex-direction:column;justify-content:center;gap:.12rem}}
-.card-title{{font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:.04em;line-height:1.1;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
-.card-org{{font-size:.75rem;font-weight:500;color:#333}}
-.card-loc{{font-size:.7rem}}
-.map-link{{color:#555;text-decoration:none;display:inline-flex;align-items:center;gap:.2rem}}
-.map-link:hover{{color:var(--blue);text-decoration:underline}}
+.card-top{{padding:.8rem .9rem .6rem;display:flex;flex-direction:column;gap:.25rem;flex:1}}
+.card-type-row{{display:flex;align-items:center;justify-content:space-between;gap:.4rem}}
+.card-lbl{{font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.8;font-family:'DM Sans',sans-serif}}
+.card-title{{font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:.04em;line-height:1.1;margin-top:.1rem}}
+.card-org-name{{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.04em;opacity:.75;margin-top:auto;padding-top:.4rem}}
+.card-bottom{{padding:.6rem .9rem .7rem;border-top:2px solid rgba(0,0,0,.15);display:flex;flex-direction:column;gap:.2rem;background:rgba(0,0,0,.04)}}
+.cd{{display:flex;align-items:baseline;gap:.3rem;font-family:'Bangers',cursive;line-height:1}}
+.cd-dow{{font-size:.7rem;letter-spacing:.1em;opacity:.7}}
+.cd-mon{{font-size:.85rem;letter-spacing:.08em}}
+.cd-day{{font-size:1.3rem}}
+.cd.ongoing span{{font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.7}}
+.card-loc{{font-size:.68rem}}
+.map-link{{color:inherit;text-decoration:none;opacity:.7;display:inline-flex;align-items:center;gap:.2rem}}
+.map-link:hover{{opacity:1;text-decoration:underline}}
 .map-arr{{font-size:.6rem;opacity:.55}}
-.card-when{{font-size:.67rem;color:#999}}
-.badges{{margin-top:.25rem;display:flex;gap:.3rem;flex-wrap:wrap}}
-.badge-soon{{display:inline-block;font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--red);color:#fff;padding:.1rem .38rem;border:1.5px solid var(--black)}}
-.badge-started{{display:inline-block;font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#aaa;color:#fff;padding:.1rem .38rem;border:1.5px solid #888}}
-.card-go{{display:flex;align-items:center;padding:0 .9rem;font-size:1rem;color:#ccc;border-left:2px solid #ddd;flex-shrink:0;transition:color .1s}}
-.card:hover .card-go{{color:var(--black);border-left-color:var(--black)}}
+.card-when{{font-size:.65rem;opacity:.6}}
+.badges{{display:flex;gap:.3rem;flex-wrap:wrap}}
+.badge-soon{{display:inline-block;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--black);color:#fff;padding:.1rem .38rem}}
+.badge-started{{display:inline-block;font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.25);color:#fff;padding:.1rem .38rem}}
 .suggest-bar{{max-width:960px;margin:0 auto;padding:1.25rem 2rem;border-top:4px solid var(--black);border-bottom:4px solid var(--black);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}}
 .suggest-bar p{{font-size:.85rem;color:#444}}
 .suggest-bar p strong{{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:.04em;color:var(--black)}}
@@ -204,10 +213,10 @@ h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spaci
 footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1.2rem 2rem;font-size:.68rem;color:#888;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}}
 .footer-left{{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center}}
 .footer-site{{font-family:'Bangers',cursive;font-size:.9rem;letter-spacing:.04em;color:var(--black)}}
-footer a{{color:#888;text-decoration:none}}
+footer a{{color:#555;text-decoration:underline;text-underline-offset:2px}}
 footer a:hover{{color:var(--black)}}
-.kofi-link{{font-size:.72rem;color:#888;text-decoration:none;white-space:nowrap}}
-.kofi-link:hover{{color:#fcbf47}}
+.kofi-link{{font-size:.72rem;color:#555;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}}
+.kofi-link:hover{{color:var(--black)}}
 .hidden{{display:none!important}}
 @media(max-width:640px){{
   .h-inner,.filter-bar,.listings,footer,.suggest-bar{{padding-left:1rem;padding-right:1rem}}
@@ -234,14 +243,9 @@ footer a:hover{{color:var(--black)}}
   <button class="fbtn" data-filter="Workshop">Workshops</button>
   <button class="fbtn" data-filter="Class">Classes</button>
   <button class="fbtn" data-filter="Audition">Auditions</button>
-  <button class="fbtn" data-filter="Incubator">Incubator</button>
-  <div class="f-div"></div>
-  <button class="fbtn" data-filter="Essex Improv">Essex Improv</button>
-  <button class="fbtn" data-filter="Stranger Than Fiction Improv">Stranger Than Fiction</button>
-  <button class="fbtn" data-filter="Queen City Improv">Queen City Improv</button>
-  <button class="fbtn" data-filter="YES&amp;Co.">YES&amp;Co.</button>
-  <button class="fbtn" data-filter="Maine Improv Studio">Maine Improv Studio</button>
-  <button class="fbtn" data-filter="Seacoast Improv Incubator">Seacoast Incubator</button>
+  <button class="fbtn" data-filter="Festival">Festivals</button>
+  <button class="fbtn" data-filter="Incubator">Incubators</button>
+  <button class="fbtn" data-filter="Other">Other</button>
 </div>
 <main class="listings">
 {cards_html}
@@ -265,15 +269,7 @@ footer a:hover{{color:var(--black)}}
   </div>
 </footer>
 
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('cgmoore', {{
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Tip Me',
-    'floating-chat.donateButton.background-color': '#323842',
-    'floating-chat.donateButton.text-color': '#fff'
-  }});
-</script>
+
 <script>
 document.querySelectorAll('.card').forEach(card => {{
   card.addEventListener('click', e => {{
