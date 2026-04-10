@@ -231,10 +231,9 @@ footer{{border-top:2px solid var(--black);max-width:960px;margin:0 auto;padding:
 .footer-site{{font-family:'Bangers',cursive;font-size:.9rem;letter-spacing:.04em;color:var(--black)}}
 footer a{{color:#555;text-decoration:underline;text-underline-offset:2px}}
 footer a:hover{{color:var(--black)}}
-.kofi-section{{max-width:960px;margin:0 auto;padding:2rem 2rem 1rem;border-top:2px solid var(--black)}}
-.kofi-inner{{max-width:480px}}
+.kofi-section{{max-width:960px;margin:0 auto;padding:2rem 2rem 3rem;border-top:2px solid var(--black);display:flex;flex-direction:column;align-items:center;text-align:center}}
 .kofi-heading{{font-family:'Bangers',cursive;font-size:1.5rem;letter-spacing:.04em;color:var(--black);margin-bottom:.3rem}}
-.kofi-sub{{font-size:.82rem;color:#666;margin-bottom:1rem;line-height:1.5}}
+.kofi-sub{{font-size:.82rem;color:#666;margin-bottom:1.25rem;line-height:1.5;max-width:400px}}
 .hidden{{display:none!important}}
 
 @media(max-width:640px){{
@@ -294,14 +293,6 @@ footer a:hover{{color:var(--black)}}
     <a class="modal-btn" href="https://tally.so/r/QKJ18p" target="_blank" rel="noopener">Submit or Update a Listing →</a>
   </div>
 </div>
-<div class="kofi-section">
-  <div class="kofi-inner">
-    <p class="kofi-heading">Support this site</p>
-    <p class="kofi-sub">Seacoast Improv Scene is a free community resource. If it's useful to you, consider buying me a coffee.</p>
-    <iframe id='kofiframe' src='https://ko-fi.com/cgmoore/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;max-width:480px;background:#f9f9f9;' height='712' title='cgmoore'></iframe>
-  </div>
-</div>
-
 <footer>
   <div class="footer-left">
     <span class="footer-site">seacoastimprov.lol</span>
@@ -350,6 +341,11 @@ document.getElementById('how-modal').addEventListener('click', e => {{
 }});
 </script>
 
+<div class="kofi-section">
+  <p class="kofi-heading">Support this site</p>
+  <p class="kofi-sub">Seacoast Improv Scene is a free community resource. If it's useful to you, consider buying me a coffee.</p>
+  <iframe id='kofiframe' src='https://ko-fi.com/cgmoore/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;max-width:480px;background:#f9f9f9;' height='712' title='cgmoore'></iframe>
+</div>
 </body>
 </html>"""
 
