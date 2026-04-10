@@ -152,7 +152,7 @@ html = f"""<!DOCTYPE html>
   --bg:#F5F2EC;--black:#111;
 }}
 body{{background:var(--bg);color:var(--black);font-family:'DM Sans',sans-serif}}
-header{{border-bottom:4px solid var(--black);background:var(--bg)}}
+header{{background:var(--bg)}}
 .h-inner{{max-width:960px;margin:0 auto;padding:3rem 2rem 2.5rem}}
 .eyebrow{{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#666;margin-bottom:.6rem}}
 h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spacing:.04em;line-height:.88;color:var(--red)}}
@@ -180,8 +180,8 @@ h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spaci
 .fbtn.active[data-filter="Festival"]{{background:#FF1493;color:#fff;border-left-color:var(--black)}}
 .fbtn.active[data-filter="Other"]{{background:#888;color:#fff;border-left-color:var(--black)}}
 
-.listings{{max-width:960px;margin:0 auto;padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0}}
-.card{{display:flex;flex-direction:column;border:3px solid var(--black);margin:-1.5px;cursor:pointer;color:var(--black);background:var(--bg);position:relative;z-index:0;transition:transform .08s;min-height:180px}}
+.listings{{max-width:960px;margin:0 auto;padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.75rem}}
+.card{{display:flex;flex-direction:column;border:3px solid var(--black);cursor:pointer;color:var(--black);background:var(--bg);position:relative;z-index:0;transition:transform .08s;min-height:180px}}
 .card:hover{{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--black);z-index:10}}
 .card:focus-visible{{outline:3px solid var(--blue);outline-offset:2px}}
 .card-started{{opacity:.5;filter:saturate(.35)}}
@@ -210,7 +210,7 @@ h1{{font-family:'Bangers',cursive;font-size:clamp(4.5rem,14vw,9rem);letter-spaci
 .suggest-bar p strong{{font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:.04em;color:var(--black)}}
 .suggest-link{{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:var(--black);color:#fff;padding:.4rem 1.1rem;text-decoration:none;border:2.5px solid var(--black);transition:background .1s,color .1s;flex-shrink:0}}
 .suggest-link:hover{{background:var(--red);border-color:var(--red)}}
-footer{{border-top:4px solid var(--black);max-width:960px;margin:0 auto;padding:1.2rem 2rem;font-size:.68rem;color:#888;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}}
+footer{{border-top:2px solid var(--black);max-width:960px;margin:0 auto;padding:1.2rem 2rem;font-size:.68rem;color:#888;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}}
 .footer-left{{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center}}
 .footer-site{{font-family:'Bangers',cursive;font-size:.9rem;letter-spacing:.04em;color:var(--black)}}
 footer a{{color:#555;text-decoration:underline;text-underline-offset:2px}}
